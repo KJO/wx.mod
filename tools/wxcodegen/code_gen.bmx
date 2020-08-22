@@ -685,7 +685,7 @@ Type TFBWidget
 
 		If bitmap[0] Then
 			Local file:String = bitmap[0]
-			If file = "LoadFromFile" Then
+			If file = "Load From File" Then
 				file = bitmap[1]
 			End If
 
