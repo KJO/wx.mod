@@ -730,9 +730,46 @@ Type TFBWidget
 				text:+ attribs[3] + ", "
 			End If
 
-			text:+ attribs[4] + ", "
-			text:+ attribs[1] + ", "
-			text:+ attribs[2] + ", "
+			Select attribs[4].ToInt()
+				Case wxDEFAULT
+					text :+ "wxFONTFAMILY_DEFAULT, "
+				Case wxDECORATIVE
+					text :+ "wxFONTFAMILY_DECORATIVE, "
+				Case wxROMAN
+					text :+ "wxFONTFAMILY_ROMAN, "
+				Case wxSCRIPT
+					text :+ "wxFONTFAMILY_SCRIPT, "
+				Case wxSWISS
+					text :+ "wxFONTFAMILY_SWISS, "
+				Case wxMODERN
+					text :+ "wxFONTFAMILY_MODERN, "
+				Case wxTELETYPE
+					text :+ "wxFONTFAMILY_TELETYPE, "
+				Default
+					text :+ attribs[4] + ", "
+			End Select
+
+			Select Attribs[1].ToInt()
+				Case wxNormal
+					text:+ "wxFONTSTYLE_NORMAL, "
+				Case wxITALIC
+					text:+ "wxFONTSTYLE_ITALIC, "
+				Case wxSLANT
+					text:+ "wxFONTSTYLE_SLANT, "
+				Default 
+					text:+ attribs[1] + ", "
+			End Select
+			
+			Select attribs[2].ToInt()
+				Case wxNORMAL
+					text :+ "wxFONTWEIGHT_NORMAL, "
+				Case wxLIGHT
+					text :+ "wxFONTWEIGHT_LIGHT, "
+				Case wxBOLD
+					text :+ "wxFONTWEIGHT_BOLD, "
+				Default
+					text:+ attribs[2] + ", "
+			End Select
 
 			If attribs[5] = "0" Then
 				text:+ "False"
@@ -3432,9 +3469,46 @@ Type TFBFontPickerCtrl Extends TFBWidget
 				text:+ attribs[3] + ", "
 			End If
 
-			text:+ attribs[4] + ", "
-			text:+ attribs[1] + ", "
-			text:+ attribs[2] + ", "
+			Select attribs[4].ToInt()
+				Case wxDEFAULT
+					text :+ "wxFONTFAMILY_DEFAULT, "
+				Case wxDECORATIVE
+					text :+ "wxFONTFAMILY_DECORATIVE, "
+				Case wxROMAN
+					text :+ "wxFONTFAMILY_ROMAN, "
+				Case wxSCRIPT
+					text :+ "wxFONTFAMILY_SCRIPT, "
+				Case wxSWISS
+					text :+ "wxFONTFAMILY_SWISS, "
+				Case wxMODERN
+					text :+ "wxFONTFAMILY_MODERN, "
+				Case wxTELETYPE
+					text :+ "wxFONTFAMILY_TELETYPE, "
+				Default
+					text :+ attribs[4] + ", "
+			End Select
+
+			Select Attribs[1].ToInt()
+				Case wxNormal
+					text:+ "wxFONTSTYLE_NORMAL, "
+				Case wxITALIC
+					text:+ "wxFONTSTYLE_ITALIC, "
+				Case wxSLANT
+					text:+ "wxFONTSTYLE_SLANT, "
+				Default 
+					text:+ attribs[1] + ", "
+			End Select
+			
+			Select attribs[2].ToInt()
+				Case wxNORMAL
+					text :+ "wxFONTWEIGHT_NORMAL, "
+				Case wxLIGHT
+					text :+ "wxFONTWEIGHT_LIGHT, "
+				Case wxBOLD
+					text :+ "wxFONTWEIGHT_BOLD, "
+				Default
+					text:+ attribs[2] + ", "
+			End Select
 
 			If attribs[5] = "0" Then
 				text:+ "False"
